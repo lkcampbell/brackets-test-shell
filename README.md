@@ -9,7 +9,7 @@ A very simple extension for [Brackets](https://github.com/adobe/brackets/) that 
 ### How to Use Extension
 Write the code that you want to test inside of the `runTestCode` function.
 
-Toggle the extension with **Debug > Run Extension Test Code**.
+Run the extension with **Debug > Run Extension Test Code**.
 
 ### License
 MIT-licensed -- see `main.js` for details.
