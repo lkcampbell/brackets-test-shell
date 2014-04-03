@@ -29,25 +29,38 @@ define(function (require, exports, module) {
     "use strict";
     
     // Brackets modules
-    var AppInit         = brackets.getModule("utils/AppInit"),
-        CommandManager  = brackets.getModule("command/CommandManager"),
-        Menus           = brackets.getModule("command/Menus");
+    var AppInit               = brackets.getModule("utils/AppInit"),
+        CommandManager        = brackets.getModule("command/CommandManager"),
+        PreferencesManager    = brackets.getModule("preferences/PreferencesManager"),
+        Menus                 = brackets.getModule("command/Menus");
     
     // Constants
     var COMMAND_NAME    = "Run Extension Test Code",
         COMMAND_ID      = "lkcampbell.runTestCode",
         DEBUG_MENU      = "debug-menu";
     
+    // Variables
+    var prefs = PreferencesManager.getExtensionPrefs("brackets-test-shell");
+
+    // Set up preferences default values
+    prefs.definePreference("testPrefChangedDatetime","string","default");
+
     // Event handlers
     function runTestCode() {
         // Put any test code you want to run here.
         console.log("**PUT TEST CODE HERE**");
+        // Setting and getting of extension preferences
+        console.log(prefs.get("testPrefChangedDatetime"));
+        var newDatetime = new Date();
+        prefs.set("testPrefChangedDatetime",newDatetime);
+        prefs.save();
     }
     
     // Initialize extension
     AppInit.appReady(function () {
         // Register Run Test Code command and add it to Debug menu
         CommandManager.register(COMMAND_NAME, COMMAND_ID, runTestCode);
+        // Add command to the debug menu
         Menus.getMenu(DEBUG_MENU).addMenuItem(COMMAND_ID);
     });
 });
