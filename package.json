@@ -1,10 +1,10 @@
 {
     "name": "brackets-test-shell",
     "title": "Test Shell Extension",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A very simple extension that provides an empty extension test shell to run any code from within the Brackets environment.",
     "homepage": "https://github.com/lkcampbell/brackets-test-shell",
-    "author": "Lance Campbell lkcampbell@gmail.com (https://github.com/lkcampbell)",
+    "author": "Lance Campbell (https://github.com/lkcampbell)",
     "license": "MIT",
     "categories":"editing",
     "keywords": [

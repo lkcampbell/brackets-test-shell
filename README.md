@@ -13,6 +13,3 @@ Run the extension with **Debug > Run Extension Test Code**.
 
 ### License
 MIT-licensed -- see `main.js` for details.
-
-### Compatibility
-Tested on Brackets Sprint 37 Mac OSX (Mavericks).
